@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import App from '../example/app';
-import { codeWrapper } from '../example/example.module.css';
+import { useEffect } from "react";
+import App from "../example/app";
+import { codeWrapper } from "../example/example.module.css";
 
 # Example
 
@@ -12,7 +12,7 @@ In this example, we will build a basic TODO app to highlight setting up your sto
 
 Start by creating a file for your store (e.g., **store.ts**) and adding the following types:
 
-<span style={{ fontFamily: 'monospace'}}>store.ts</span>
+<span style={{ fontFamily: "monospace" }}>store.ts</span>
 
 <div className={codeWrapper}>
     ```typescript
@@ -27,9 +27,14 @@ Start by creating a file for your store (e.g., **store.ts**) and adding the foll
         description: string;
     };
     ```
+
 </div>
 
-<mark>**Note:** You can name your store file whatever you like, and you can have as many stores as you want to provide better localization of data in your application</mark>
+<mark>
+  **Note:** You can name your store file whatever you like, and you can have as
+  many stores as you want to provide better localization of data in your
+  application
+</mark>
 
 <br />
 
@@ -38,14 +43,18 @@ Start by creating a file for your store (e.g., **store.ts**) and adding the foll
 With our types declared, we now instantitate our store and export it for use throughout our application. You can do this in the same file where you declared your types. Start by importing the <span class="inline-code">CreateSingle</span>, <span class="inline-code">CreateTable</span> and <span class="inline-code">CreateStore</span>
 convenience functions from the library.
 
-<mark>**Note:** We are using a <span class="inline-code">single</span> called <span class="inline-code">initialLoad</span> to ensure we don't load data into our store multiple times</mark>
+<mark>
+  **Note:** We are using a <span class="inline-code">single</span> called{" "}
+  <span class="inline-code">initialLoad</span> to ensure we don't load data into
+  our store multiple times
+</mark>
 <br />
 
-<span style={{ fontFamily: 'monospace'}}>store.ts</span>
+<span style={{ fontFamily: "monospace" }}>store.ts</span>
 
 <div className={codeWrapper}>
     ```typescript
-    import { CreateSingle, CreateTable, CreateStore } from '@datahook/trigger';
+    import { CreateSingle, CreateTable, CreateStore } from '@jweston/trigger';
 
     export const store = CreateStore({
         taskOwners: CreateTable<TaskOwner>({ ownerID: [1, 2, 3, 4], firstName: ['Bill', 'Steve', 'Ada', 'Alan'], lastName: ['Gates', 'Jobs', 'Lovelace', 'Turing'] }),
@@ -54,16 +63,17 @@ convenience functions from the library.
         initialLoad: CreateSingle(true),
     });
     ```
+
 </div>
 
 The final version of our store is shown below, and is now ready for use in our application.
 
-<span style={{ fontFamily: 'monospace'}}>store.ts</span>
+<span style={{ fontFamily: "monospace" }}>store.ts</span>
 
 <div className={codeWrapper}>
     ```typescript
-    import { CreateSingle, CreateTable, CreateStore } from '@datahook/trigger';
-    export type { TableRow } from '@datahook/trigger';
+    import { CreateSingle, CreateTable, CreateStore } from '@jweston/trigger';
+    export type { TableRow } from '@jweston/trigger';
 
     type TaskOwner = {
         ownerId: number;
@@ -83,15 +93,18 @@ The final version of our store is shown below, and is now ready for use in our a
         initialLoad: CreateSingle(true),
     });
     ```
+
 </div>
 
 ### CREATE OUR COMPONENTS
 
-<mark>**Note:** For brevity, not all imports are shown (e.g., React, styling, etc.)</mark>
+<mark>
+  **Note:** For brevity, not all imports are shown (e.g., React, styling, etc.)
+</mark>
 
 <br />
 
-<span style={{ fontFamily: 'monospace'}}>app.tsx</span>
+<span style={{ fontFamily: "monospace" }}>app.tsx</span>
 
 <div className={codeWrapper}>
     ```tsx
@@ -135,9 +148,10 @@ The final version of our store is shown below, and is now ready for use in our a
         )
     }
     ```
+
 </div>
 
-<span style={{ fontFamily: 'monospace'}}>taskOwners.tsx</span>
+<span style={{ fontFamily: "monospace" }}>taskOwners.tsx</span>
 
 <div className={codeWrapper}>
     ```tsx
@@ -176,9 +190,10 @@ The final version of our store is shown below, and is now ready for use in our a
         )
     }
     ```
+
 </div>
 
-<span style={{ fontFamily: 'monospace'}}>tasks.tsx</span>
+<span style={{ fontFamily: "monospace" }}>tasks.tsx</span>
 
 <div className={codeWrapper}>
     ```tsx
@@ -239,7 +254,7 @@ The final version of our store is shown below, and is now ready for use in our a
                                     <td>{store.taskOwners.findOne({ ownerId: t.ownerId})!.firstName} {store.taskOwners.findOne({ ownerId: t.ownerId})!.lastName}</td>
                                     <td>{t.description}</td>
                                     <td className={icon} title={tooltip} onClick={() => handleToggleTask(t._id)}>
-                                        {iconColour === 'success' 
+                                        {iconColour === 'success'
                                             ? <CheckCircle color={iconColour} fontSize="large"/>
                                             : <Cancel color={iconColour} fontSize="large" />
                                         }
@@ -253,4 +268,5 @@ The final version of our store is shown below, and is now ready for use in our a
         )
     }
     ```
+
 </div>

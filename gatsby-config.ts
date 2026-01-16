@@ -5,7 +5,7 @@ dotenv.config({ path: '.env' });
 const config: GatsbyConfig = {
 	siteMetadata: {
 		title: `Trigger Documentation`,
-		siteUrl: `https://www.trigger.datahook.ca`,
+		siteUrl: `https://www.trigger.joshweston.ca`,
 	},
 	graphqlTypegen: true,
 	plugins: [

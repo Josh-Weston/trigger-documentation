@@ -74,7 +74,7 @@ export function Navigation() {
         <h1>
           TRIGGER{" "}
           <sup>
-            v0.21 <img src="/lightning.png" />
+            v0.21.5 <img src="/lightning.png" />
           </sup>
         </h1>
       </a>
@@ -130,7 +130,7 @@ export function Navigation() {
           </li>
           <li>
             <a
-              href="https://github.com/datahookinc/trigger"
+              href="https://github.com/josh-weston/trigger"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -139,7 +139,7 @@ export function Navigation() {
           </li>
           <li>
             <a
-              href="https://www.npmjs.com/package/@datahook/trigger"
+              href="https://www.npmjs.com/package/@jweston/trigger"
               target="_blank"
               rel="noopener noreferrer"
             >

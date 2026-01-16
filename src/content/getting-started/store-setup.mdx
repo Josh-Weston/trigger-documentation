@@ -1,4 +1,4 @@
-import { codeWrapper } from '../../example/example.module.css';
+import { codeWrapper } from "../../example/example.module.css";
 
 # Setting up your store
 
@@ -7,11 +7,11 @@ this is not strictly required.
 
 Here is an example store:
 
-<span style={{ fontFamily: 'monospace'}}>store.ts</span>
+<span style={{ fontFamily: "monospace" }}>store.ts</span>
 
 <div className={codeWrapper}>
     ```typescript
-    import { CreateTable, CreateStore } from '@datahook/trigger';
+    import { CreateTable, CreateStore } from '@jweston/trigger';
 
     // declare a table type
     type Person = {
@@ -25,6 +25,7 @@ Here is an example store:
         person: CreateTable<Person>(['id', 'name', 'age']),
     });
     ```
+
 </div>
 
 In the example above, half of the code is for declaring our table and store types. We first create a type called <span class="inline-code">Person</span> to represent a table in our store.
@@ -32,9 +33,10 @@ In the example above, half of the code is for declaring our table and store type
 Once we have a our types declared, we can then create our store, along with the initial values for our tables. In this example, the initial table is empty, which is why we pass just the column names.
 
 If our table had <span class="inline-code">singles</span> and <span class="inline-code">queues</span>, the store would look something like this:
+
 <div className={codeWrapper}>
     ```typescript
-    import { CreateSingle, CreateTable, CreateQueue, CreateStore } from '@datahook/trigger';
+    import { CreateSingle, CreateTable, CreateQueue, CreateStore } from '@jweston/trigger';
 
     // declare a table type
     type Person = {
@@ -50,6 +52,7 @@ If our table had <span class="inline-code">singles</span> and <span class="inlin
         eventQueue: CreateQueue<string>(),
     });
     ```
+
 </div>
 
 Notice how when we declare our store we use the <span class="inline-code">Table</span>, <span class="inline-code">Single</span>, and <span class="inline-code">Queue</span> types, and when we create our store we use the <span class="inline-code">CreateTable()</span>, <span class="inline-code">CreateSingle()</span>, and <span class="inline-code">CreateQueue()</span> functions.
@@ -58,9 +61,10 @@ You can add as many tables, singles, and queues as you like to your store. It is
 to how you would use a regular reducer function. This basic structure is how all of your stores will be setup, with most of the complexity coming from declaring your types.
 
 You can also create nested properties in your store for improved namespacing. For instance, our previous store could be declared as the following:
+
 <div className={codeWrapper}>
     ```typescript
-    import { CreateSingle, CreateTable, CreateQueue, CreateStore } from '@datahook/trigger';
+    import { CreateSingle, CreateTable, CreateQueue, CreateStore } from '@jweston/trigger';
 
     // declare a table type
     type Person = {
@@ -84,6 +88,7 @@ You can also create nested properties in your store for improved namespacing. Fo
 
     export { tables, singles, queues } = store;
     ```
+
 </div>
 
 Notice how we can now pull apart the tables, singles, and queues for clarity when importing the store into our components.

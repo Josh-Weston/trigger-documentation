@@ -1,5 +1,5 @@
-import { CreateSingle, CreateStore, CreateTable } from '@datahook/trigger';
-export type { TableRow } from '@datahook/trigger';
+import { CreateSingle, CreateStore, CreateTable } from '@jweston/trigger';
+export type { TableRow } from '@jweston/trigger';
 
 type TaskOwner = {
     ownerId: number;

@@ -1,4 +1,4 @@
-import { codeWrapper } from '../example/example.module.css';
+import { codeWrapper } from "../example/example.module.css";
 
 # Welcome to **Trigger**!
 
@@ -6,7 +6,7 @@ import { codeWrapper } from '../example/example.module.css';
 0 dependencies, and is designed to optimize the developer experience for working with data in your application.
 
 ```bash
-npm i @datahook/trigger
+npm i @jweston/trigger
 ```
 
 **Trigger** borrows philosophies and design patterns from database management (e.g., INSERT / UPDATE / DELETE, triggers, transactions, etc.) and spreadsheets; however, it also
@@ -14,11 +14,11 @@ borrows design patterns from other popular React state management systems to max
 
 ## Step 1: Create a store in a regular .ts file
 
-<span style={{ fontFamily: 'monospace'}}>store.ts</span>
+<span style={{ fontFamily: "monospace" }}>store.ts</span>
 
 <div className={codeWrapper}>
     ```typescript
-    import { CreateTable, CreateStore } from '@datahook/trigger';
+    import { CreateTable, CreateStore } from '@jweston/trigger';
 
     // declare a table type
     type Person = {
@@ -32,25 +32,28 @@ borrows design patterns from other popular React state management systems to max
         person: CreateTable<Person>(['id', 'name', 'age']),
     });
     ```
+
 </div>
 
 ## Step 2: Use your store in your components
 
-<span style={{ fontFamily: 'monospace'}}>component.tsx</span>
+<span style={{ fontFamily: "monospace" }}>component.tsx</span>
 
 <div className={codeWrapper}>
 ```tsx
 import { store } from './store';
 
 function MyComponent() {
-    const rows = store.activeTasks.use();
+const rows = store.activeTasks.use();
 
     return (
         <div>
             There are {rows.length} active tasks in the table
         </div>
     )
+
 }
+
 ```
 </div>
 
@@ -58,3 +61,4 @@ Trigger uses React hooks internally, which makes it easy to integrate the store 
 has all of our tables namespaced and ready to use. When using TypeScript, you will also receive type hints about the properties your table contains, if your IDE supports it.
 
 The same table can be used in multiple components, which allows you to control which components need to update when there is a change to the underlying table.
+```

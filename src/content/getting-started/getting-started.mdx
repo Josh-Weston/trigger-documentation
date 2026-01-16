@@ -1,21 +1,21 @@
-import { codeWrapper } from '../../example/example.module.css';
-import { Link } from 'gatsby';
+import { codeWrapper } from "../../example/example.module.css";
+import { Link } from "gatsby";
 
 # Getting Started
 
 ### Add Trigger to your project
 
 ```bash
-npm i @datahook/trigger
+npm i @jweston/trigger
 ```
 
 ### Create a store as a regular .ts file
 
-<span style={{ fontFamily: 'monospace'}}>store.ts</span>
+<span style={{ fontFamily: "monospace" }}>store.ts</span>
 
 <div className={codeWrapper}>
     ```typescript
-    import { CreateTable, CreateStore } from '@datahook/trigger';
+    import { CreateTable, CreateStore } from '@jweston/trigger';
 
     type TaskOwner = {
         ownerID: number;
@@ -34,11 +34,12 @@ npm i @datahook/trigger
         completedTasks: CreateTable<Task>({ ownerID: [], description: [], }),
     });
     ```
+
 </div>
 
 ### Use your store in your components
 
-<span style={{ fontFamily: 'monospace'}}>component.tsx</span>
+<span style={{ fontFamily: "monospace" }}>component.tsx</span>
 
 <div className={codeWrapper}>
     ```tsx
@@ -54,6 +55,7 @@ npm i @datahook/trigger
         )
     }
     ```
+
 </div>
 
 ### Explore the full API for all available functionality
