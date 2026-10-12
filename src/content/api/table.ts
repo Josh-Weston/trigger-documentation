@@ -724,6 +724,28 @@ import { tables } from './store';
 const jsonString = tables.cats.toJSON(false, { name: "PJ" });`,
             ]
         },
+        {
+            name: 'clear()',
+            description: `Clears all rows from the specified table.`,
+            signature: `clear(resetIndex?: boolean): void;`,
+            parameters: [
+                {
+                    name: 'resetIndex',
+                    optional: true,
+                    type: `boolean`,
+                    description: `determines if the table's index should be reset (defaults to true)`,
+                },
+            ],
+            returns: 'Nothing',
+            examples: [
+                `// clear the table and reset the index
+import { tables } from './store';
+tables.cats.clear();`,
+                `// clear the table and do not reset the index
+import { tables } from './store';
+tables.cats.clear(false);`,
+            ]
+        },
     ]
 }
 

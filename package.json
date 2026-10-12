@@ -21,7 +21,7 @@
   "dependencies": {
     "@emotion/react": "11.11.0",
     "@emotion/styled": "11.11.0",
-    "@jweston/trigger": "0.21.5",
+    "@jweston/trigger": "0.21.8",
     "@mdx-js/react": "2.3.0",
     "@mui/icons-material": "5.11.16",
     "@mui/material": "5.13.4",

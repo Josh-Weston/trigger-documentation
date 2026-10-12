@@ -74,7 +74,7 @@ export function Navigation() {
         <h1>
           TRIGGER{" "}
           <sup>
-            v0.21.5 <img src="/lightning.png" />
+            v0.21.8 <img src="/lightning.png" />
           </sup>
         </h1>
       </a>
